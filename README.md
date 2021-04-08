@@ -253,13 +253,13 @@ Utilizando a IDE IntelliJ IDEA da JetBrains, foram rodados os testes unitários 
 
 #### Cobertura geral
 
-![Cobertura geral](readme_imagens_gifs/Cobertura Geral.png)
+![Cobertura geral](https://github.com/vhnegrisoli/guia-bolso-transacao-api/blob/master/readme_imagens_gifs/Cobertura%20Geral.png)
 
 A cobertura geral do projeto ficou em 100% de classes testadas (19 de 19 classes), 90% em métodos testados (65 de 72 métodos) e 94% de linhas testadas (203 de 2015).
 
 #### Cobertura de módulos específicos da aplicação
 
-![Cobertura de módulos](readme_imagens_gifs/Cobertura Módulos.png)
+![Cobertura de módulos](https://github.com/vhnegrisoli/guia-bolso-transacao-api/blob/master/readme_imagens_gifs/Cobertura%20M%C3%B3dulos.png)
 
 A aplicação é divida em três módulos principais, o módulo de usuário, transação e comum (contendo constantes, exceptions e classes utilitárias).
 
@@ -281,11 +281,11 @@ https://guia-bolso-transacao-api.herokuapp.com/swagger-ui.html
 
 ### Endpoint da API
 
-![Documentação do Swagger - Endpoint](readme_imagens_gifs/REST Endpoint Swagger.png)
+![Documentação do Swagger - Endpoint](https://github.com/vhnegrisoli/guia-bolso-transacao-api/blob/master/readme_imagens_gifs/REST%20Endpoint%20Swagger.png)
 
 ### Especificação dos parâmetros e respostas
 
-![Documentação do Swagger - Respostas](readme_imagens_gifs/REST Endpoint Especificações.png)
+![Documentação do Swagger - Respostas](https://github.com/vhnegrisoli/guia-bolso-transacao-api/blob/master/readme_imagens_gifs/REST%20Endpoint%20Especifica%C3%A7%C3%B5es.png)
 
 ## Autores
 
