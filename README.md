@@ -1,6 +1,8 @@
 # Projeto Guia Bolso - Transação API
 
-API REST do projeto Transação API para aplicação da vaga de Back-end Engineer no Guia Bolso.
+API REST do projeto Transação API para aplicação da vaga de Back-end Engineer no Guia Bolso. 
+
+**Obs.: esse teste foi realizado em Outubro de 2020. E sim, fui aprovado no teste técnico, mas acabei aceitando outra proposta e não dei sequência a este processo seletivo.**
 
 ## Resumo
 
