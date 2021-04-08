@@ -1,0 +1,34 @@
+version: "3.0"
+services:
+
+  transacao-db:
+    image: postgres:11
+    container_name: transacao-db
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=transacao
+    networks:
+      - transacao-network
+    ports:
+      - '5432:5432'
+
+  transacao-api:
+    build: './'
+    container_name: transacao-api
+    ports:
+      - '8080:8080'
+    networks:
+      - transacao-network
+    depends_on:
+      - transacao-db
+    environment:
+      - SPRING_PROFILES_ACTIVE=producao
+      - DATABASE_HOST=transacao-db
+      - DATABASE_NAME=transacao
+      - DATABASE_USER=admin
+      - DATABASE_PASSWORD=123456
+
+networks:
+  transacao-network:

@@ -1,0 +1,80 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'br.com.guiabolso'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile('org.springframework.boot:spring-boot-starter-web')
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.0")
+	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+	compile group: 'org.junit.platform', name: 'junit-platform-commons', version: '1.7.0'
+	testCompile('org.junit.jupiter:junit-jupiter-api')
+	testRuntime('org.junit.jupiter:junit-jupiter-engine')
+	testCompile('org.junit.jupiter:junit-jupiter-params')
+	testCompile('org.junit.platform:junit-platform-launcher')
+	testCompile('org.junit.platform:junit-platform-runner')
+	compileOnly 'org.projectlombok:lombok:1.18.14'
+	annotationProcessor 'org.projectlombok:lombok:1.18.14'
+	testCompileOnly 'org.projectlombok:lombok:1.18.14'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.14'
+	testCompile("org.assertj:assertj-core:3.11.1")
+	testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.4.0'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+}
+
+task resolveDependencies {
+	doLast {
+		project.rootProject.allprojects.each { subProject ->
+			subProject.buildscript.configurations.each { configuration ->
+				configuration.resolve()
+			}
+			subProject.configurations.each { configuration ->
+				configuration.resolve()
+			}
+		}
+	}
+}
+
+bootJar {
+	enabled = false
+}
+
+jar {
+	enabled = true
+	manifest {
+		attributes(
+			'Main-Class': 'br.com.guiabolso.transacaoapi.TransacaoApiApplication'
+		)
+	}
+}
+
+test {
+	useJUnitPlatform() {
+		includeEngines 'junit-jupiter'
+	}
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
